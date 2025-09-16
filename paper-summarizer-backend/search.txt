@@ -1,2 +1,3 @@
 Fix bug in summary length - Sun, Sep 28, 2025  9:25:33 AM
 Test summarizer with sample docs - Sun, Sep 28, 2025  9:25:34 AM
+Write API docs for summarizer - Sun, Sep 28, 2025  9:25:34 AM
