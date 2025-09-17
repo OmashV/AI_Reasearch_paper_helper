@@ -3,3 +3,4 @@ Add search bar to UI - Sun, Sep 28, 2025  9:09:02 AM
 Add keyword search - Sun, Sep 28, 2025  9:09:02 AM
 Build login and signup forms - Sun, Sep 28, 2025  9:09:02 AM
 Build login and signup forms - Sun, Sep 28, 2025  9:09:02 AM
+Add profile page - Sun, Sep 28, 2025  9:09:03 AM
