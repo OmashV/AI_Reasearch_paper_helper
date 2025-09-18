@@ -3,3 +3,4 @@ Test summarizer with sample docs - Sun, Sep 28, 2025  9:25:34 AM
 Write API docs for summarizer - Sun, Sep 28, 2025  9:25:34 AM
 Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:34 AM
 Add caching for summaries - Sun, Sep 28, 2025  9:25:35 AM
+Link summarizer with frontend - Sun, Sep 28, 2025  9:25:35 AM
