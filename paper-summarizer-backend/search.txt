@@ -5,3 +5,4 @@ Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:34 AM
 Add caching for summaries - Sun, Sep 28, 2025  9:25:35 AM
 Link summarizer with frontend - Sun, Sep 28, 2025  9:25:35 AM
 Secure summarizer API - Sun, Sep 28, 2025  9:25:35 AM
+Improve error handling in summarizer - Sun, Sep 28, 2025  9:25:36 AM
