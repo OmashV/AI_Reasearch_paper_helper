@@ -8,3 +8,4 @@ Show citations in UI - Sun, Sep 28, 2025 10:13:13 AM
 Add tests for citation agent - Sun, Sep 28, 2025 10:13:13 AM
 Fix bug in citation parsing - Sun, Sep 28, 2025 10:13:13 AM
 Improve error handling in citations agent - Sun, Sep 28, 2025 10:13:14 AM
+Show citations in UI - Sun, Sep 28, 2025 10:13:14 AM
