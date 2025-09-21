@@ -9,3 +9,4 @@ Improve error handling in summarizer - Sun, Sep 28, 2025  9:25:36 AM
 Add option for short or long summary - Sun, Sep 28, 2025  9:25:36 AM
 Add caching for summaries - Sun, Sep 28, 2025  9:25:36 AM
 Handle empty text case - Sun, Sep 28, 2025  9:25:37 AM
+Refactor summarizer service - Sun, Sep 28, 2025  9:25:37 AM
