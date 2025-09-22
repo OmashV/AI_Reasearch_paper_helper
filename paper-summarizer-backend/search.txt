@@ -11,3 +11,4 @@ Add caching for summaries - Sun, Sep 28, 2025  9:25:36 AM
 Handle empty text case - Sun, Sep 28, 2025  9:25:37 AM
 Refactor summarizer service - Sun, Sep 28, 2025  9:25:37 AM
 Add caching for summaries - Sun, Sep 28, 2025  9:25:37 AM
+Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:38 AM
