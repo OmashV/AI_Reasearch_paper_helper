@@ -13,3 +13,4 @@ Refactor summarizer service - Sun, Sep 28, 2025  9:25:37 AM
 Add caching for summaries - Sun, Sep 28, 2025  9:25:37 AM
 Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:38 AM
 Link summarizer with frontend - Sun, Sep 28, 2025  9:25:38 AM
+Build text summarization function - Sun, Sep 28, 2025  9:25:38 AM
