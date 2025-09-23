@@ -13,3 +13,4 @@ Enable export citations as text - Sun, Sep 28, 2025 10:13:15 AM
 Add tests for citation agent - Sun, Sep 28, 2025 10:13:15 AM
 Add tests for citation agent - Sun, Sep 28, 2025 10:13:16 AM
 Add input check for citation requests - Sun, Sep 28, 2025 10:13:16 AM
+Enable export citations as text - Sun, Sep 28, 2025 10:13:16 AM
