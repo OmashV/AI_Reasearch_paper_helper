@@ -15,3 +15,4 @@ Setup frontend project - Sun, Sep 28, 2025  9:09:06 AM
 Style homepage and dashboard - Sun, Sep 28, 2025  9:09:06 AM
 Secure search API - Sun, Sep 28, 2025  9:09:06 AM
 Add filters to search - Sun, Sep 28, 2025  9:09:06 AM
+Add search bar to UI - Sun, Sep 28, 2025  9:09:07 AM
