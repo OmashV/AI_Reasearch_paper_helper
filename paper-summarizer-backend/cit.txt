@@ -17,3 +17,4 @@ Enable export citations as text - Sun, Sep 28, 2025 10:13:16 AM
 Fix bug in citation parsing - Sun, Sep 28, 2025 10:13:17 AM
 Improve error handling in citations agent - Sun, Sep 28, 2025 10:13:17 AM
 Add support for multiple sources - Sun, Sep 28, 2025 10:13:18 AM
+Add input check for citation requests - Sun, Sep 28, 2025 10:13:18 AM
