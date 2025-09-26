@@ -17,3 +17,4 @@ Build text summarization function - Sun, Sep 28, 2025  9:25:38 AM
 Add option for short or long summary - Sun, Sep 28, 2025  9:25:38 AM
 Write API docs for summarizer - Sun, Sep 28, 2025  9:25:39 AM
 Fix bug in summary length - Sun, Sep 28, 2025  9:25:39 AM
+Add option for short or long summary - Sun, Sep 28, 2025  9:25:39 AM
