@@ -20,3 +20,4 @@ Fix bug in summary length - Sun, Sep 28, 2025  9:25:39 AM
 Add option for short or long summary - Sun, Sep 28, 2025  9:25:39 AM
 Add option for short or long summary - Sun, Sep 28, 2025  9:25:40 AM
 Handle empty text case - Sun, Sep 28, 2025  9:25:40 AM
+Add input validation for summarizer - Sun, Sep 28, 2025  9:25:40 AM
