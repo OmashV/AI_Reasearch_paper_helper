@@ -1,0 +1,15 @@
+fastapi>=0.95
+uvicorn[standard]>=0.20
+httpx>=0.24
+python-dotenv>=1.0
+pyjwt>=2.8
+passlib[bcrypt]>=1.7.4
+sqlmodel>=0.0.8
+bleach>=6.0
+huggingface-hub>=0.16
+feedparser>=6.0
+pydantic>=2.5
+#crewai>=0.1.5            # optional: only for future CrewAI integration
+#faiss-cpu>=1.7.4         # optional (linux) for vector store, or use faiss-cpu via conda
+sentence-transformers>=2.2.2  # optional embedding model
+cryptography>=41.0         # optional: only if using encryption for sensitive data
