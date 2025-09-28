@@ -20,3 +20,4 @@ Add support for multiple sources - Sun, Sep 28, 2025 10:13:18 AM
 Add input check for citation requests - Sun, Sep 28, 2025 10:13:18 AM
 Connect citations agent to LLM - Sun, Sep 28, 2025 10:13:19 AM
 Fix bug in citation parsing - Sun, Sep 28, 2025 10:13:19 AM
+Refactor citations agent service - Sun, Sep 28, 2025 10:13:19 AM
