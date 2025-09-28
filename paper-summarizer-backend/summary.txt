@@ -1,0 +1,25 @@
+Fix bug in summary length - Sun, Sep 28, 2025  9:25:33 AM
+Test summarizer with sample docs - Sun, Sep 28, 2025  9:25:34 AM
+Write API docs for summarizer - Sun, Sep 28, 2025  9:25:34 AM
+Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:34 AM
+Add caching for summaries - Sun, Sep 28, 2025  9:25:35 AM
+Link summarizer with frontend - Sun, Sep 28, 2025  9:25:35 AM
+Secure summarizer API - Sun, Sep 28, 2025  9:25:35 AM
+Improve error handling in summarizer - Sun, Sep 28, 2025  9:25:36 AM
+Add option for short or long summary - Sun, Sep 28, 2025  9:25:36 AM
+Add caching for summaries - Sun, Sep 28, 2025  9:25:36 AM
+Handle empty text case - Sun, Sep 28, 2025  9:25:37 AM
+Refactor summarizer service - Sun, Sep 28, 2025  9:25:37 AM
+Add caching for summaries - Sun, Sep 28, 2025  9:25:37 AM
+Connect summarizer to LLM API - Sun, Sep 28, 2025  9:25:38 AM
+Link summarizer with frontend - Sun, Sep 28, 2025  9:25:38 AM
+Build text summarization function - Sun, Sep 28, 2025  9:25:38 AM
+Add option for short or long summary - Sun, Sep 28, 2025  9:25:38 AM
+Write API docs for summarizer - Sun, Sep 28, 2025  9:25:39 AM
+Fix bug in summary length - Sun, Sep 28, 2025  9:25:39 AM
+Add option for short or long summary - Sun, Sep 28, 2025  9:25:39 AM
+Add option for short or long summary - Sun, Sep 28, 2025  9:25:40 AM
+Handle empty text case - Sun, Sep 28, 2025  9:25:40 AM
+Add input validation for summarizer - Sun, Sep 28, 2025  9:25:40 AM
+Add summarizer agent module - Sun, Sep 28, 2025  9:25:41 AM
+Link summarizer with frontend - Sun, Sep 28, 2025  9:25:41 AM
