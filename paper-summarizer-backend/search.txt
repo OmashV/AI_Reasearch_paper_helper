@@ -22,3 +22,4 @@ Add option for short or long summary - Sun, Sep 28, 2025  9:25:40 AM
 Handle empty text case - Sun, Sep 28, 2025  9:25:40 AM
 Add input validation for summarizer - Sun, Sep 28, 2025  9:25:40 AM
 Add summarizer agent module - Sun, Sep 28, 2025  9:25:41 AM
+Link summarizer with frontend - Sun, Sep 28, 2025  9:25:41 AM
