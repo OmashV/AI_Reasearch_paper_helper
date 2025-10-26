@@ -86,7 +86,7 @@ async def call_cosmos_rp(messages: list, max_tokens: int = 512):
         "model": "cosmosrp",
         "messages": messages,
         "max_tokens": max_tokens,
-        "temperature": 0.7,  # Balanced for conversational responses
+        "temperature": 0.7,  
         "top_p": 0.9,
     }
     
@@ -138,31 +138,45 @@ async def chat(payload: SearchRequest, user=Depends(get_current_user)):
         r3.raise_for_status()
         citations = r3.json()
 
-        # 4) Generate conversational response with Cosmos RP
-        messages = [
-            {
-                "role": "system",
-                "content": (
+    # 4) Generate conversational response with Cosmos RP
+    messages = [
+        {
+            "role": "system",
+            "content": (
                 "You are a helpful assistant. "
                 "Provide clear, accurate, and concise responses in a professional yet friendly manner. "
-                "Keep your tone polite, approachable, and supportive while focusing on delivering useful information."
-                )
-            },
-            {
-                "role": "user",
-                "content": (
-                    f"Query: {q}\n"
-                    f"Found {len(papers)} papers:\n"
-                    f"Summaries: {summaries}"
-                )
-            }
-        ]
-        chat_response = await call_cosmos_rp(messages, max_tokens=512)
+                "Keep your tone polite, approachable, and supportive while focusing on delivering useful information.\n\n"
+
+                "# Emoji policy for responses:\n"
+                "1. Include 0–3 small, relevant emojis per response to improve readability and friendliness — "
+                "do not add more than three. Use emojis sparingly and only when they add clarity or warmth.\n"
+                "2. Choose emojis that match the content: e.g. 🔍 for research/questions, 📄 for papers/documents, "
+                "💡 for suggestions/ideas, ✅ for confirmations/success, ⚠️ for warnings, 🔗 for links, 📚 for references, 👍 for encouragement.\n"
+                "3. Place emojis inline near the sentence they relate to (not a whole block of emojis at the end). "
+                "Avoid using emojis in a way that reduces professionalism.\n"
+                "4. Do not use emojis for sensitive topics (medical, legal, personal health, finances) unless explicitly asked; "
+                "when used with sensitive topics, prefer neutral and cautious emojis (e.g. ⚠️) and include a clear, professional note.\n"
+                "5. If summarizing a list of papers, prefix each paper title/summary line with an appropriate emoji like 📄 or 📚.\n\n"
+
+                "Keep responses concise and include emojis naturally — not as decoration. Avoid any emojis that could be interpreted as unprofessional."
+            )
+        },
+        {
+            "role": "user",
+            "content": (
+                f"Query: {q}\n"
+                f"Found {len(papers)} papers:\n"
+                f"Summaries: {summaries}"
+            )
+        }
+    ]
+    chat_response = await call_cosmos_rp(messages, max_tokens=512)
+
 
     return {
         "query": q,
         "papers": [p.dict() for p in papers],
         "summaries": summaries,
         "citations": citations.get("citations", []),
-        "chat_response": chat_response  # Cosmos RP response
+        "chat_response": chat_response  
     }

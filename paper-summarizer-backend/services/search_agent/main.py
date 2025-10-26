@@ -3,6 +3,7 @@ import os
 import httpx
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import urllib.parse
 from typing import List
 import feedparser
 from common.schemas import Paper, SearchRequest, SearchResponse
@@ -78,7 +79,9 @@ async def search(req: SearchRequest):
 
     papers: List[Paper] = []
 
-    # Try Semantic Scholar first
+    encoded_query = urllib.parse.quote(q)  # ✅ encode spaces & special symbols
+
+    # ✅ Try Semantic Scholar first (with safer error handling)
     try:
         data = await call_semantic_scholar(q, limit=req.limit)
         hits = data.get("data", [])
@@ -86,15 +89,17 @@ async def search(req: SearchRequest):
             try:
                 papers.append(parse_semantic_hit(h))
             except Exception as e:
-                print("Failed to parse hit:", e, h)
-        if len(papers) >= 1:
+                print("Semantic Scholar parse error:", e)
+        if papers:  # ✅ if results exist, return immediately
             return SearchResponse(papers=papers)
-    except httpx.HTTPError as e:
+    except httpx.RequestError as e:
+        print("Semantic Scholar network error:", e)
+    except Exception as e:
         print("Semantic Scholar API error:", e)
 
-    # Fallback to arXiv
+    # ✅ Fallback to arXiv
     try:
-        papers += search_arxiv(q, max_results=req.limit)
+        papers += search_arxiv(encoded_query, max_results=req.limit)  # ✅ encoded
     except Exception as e:
         print("arXiv search error:", e)
 
