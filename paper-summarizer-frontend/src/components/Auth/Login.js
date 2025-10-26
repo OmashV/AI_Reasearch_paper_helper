@@ -1,50 +1,61 @@
-import { useState, useContext } from "react";
-import { login } from "../../services/api"; // Fix import
-import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom"; // Add for redirection
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { login } from '../../services/api';
 
 export default function Login() {
-  const { login: setToken } = useContext(AuthContext); // Rename to avoid conflict
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { login: setAuthToken } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      const res = await login({ email, password }); // Pass object
-      setToken(res.access_token); // Use access_token
-      navigate("/"); // Redirect to main app
+      const response = await login(email, password);
+      setAuthToken(response.access_token);
+      navigate('/');
     } catch (err) {
-      setError(err.response?.data?.detail || "Login failed");
-      console.error("Login error:", err);
+      setError(err.message);
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-12 glass-card">
-      <h2 className="text-2xl font-semibold mb-4">Sign in</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
-          className="rounded-md bg-transparent border border-white/10 px-4 py-2 outline-none placeholder:text-gray-400 text-black"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="rounded-md bg-transparent border border-white/10 px-4 py-2 outline-none placeholder:text-gray-400 text-black"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button className="fancy-btn" type="submit">Login</button>
-      </form>
-      {error && <p className="text-red-600 mt-3">{error}</p>}
+    <div className="flex items-center justify-center h-[calc(100vh-64px)] p-4">
+      <div className="w-full max-w-md glass-card p-6">
+        <h2 className="text-2xl font-semibold text-gray-100 mb-4">Login</h2>
+        {error && <div className="text-red-200 mb-4">{error}</div>}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm text-gray-400">Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full mt-1 p-2 bg-glass border border-opacity-6 border-white rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-400">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full mt-1 p-2 bg-glass border border-opacity-6 border-white rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
+          </div>
+          <button type="submit" className="fancy-btn w-full">
+            Login
+          </button>
+        </form>
+        <p className="mt-4 text-gray-300 text-center">
+          Don’t have an account? <Link to="/register" className="text-primary hover:text-accent">Register</Link>
+        </p>
+      </div>
     </div>
   );
 }

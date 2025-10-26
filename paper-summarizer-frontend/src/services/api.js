@@ -1,36 +1,54 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL, // http://localhost:8000
-  headers: { 'Content-Type': 'application/json' },
+  baseURL: 'http://localhost:8000',
+  timeout: 60000, // Increased from 30000 to 60000 (60 seconds)
 });
 
-export const register = async (userData) => {
-  const response = await api.post('/auth/register', userData);
-  return response.data;
+export const register = async (email, password) => {
+  try {
+    const response = await api.post('/auth/register', { email, password });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.detail || 'Registration failed');
+  }
 };
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * Logs a user in and returns an access token.
- * @param {object} userData - Object containing email and password.
- * @returns {promise<object>} A promise resolving to an object containing an access token.
- */
-/*******  563cf07d-38da-4b86-9115-9a9c6ba51019  *******/export const login = async (userData) => {
-  const response = await api.post('/auth/login', userData);
-  return response.data;
+export const login = async (email, password) => {
+  try {
+    const response = await api.post('/auth/login', { email, password });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.detail || 'Login failed');
+  }
 };
 
 export const chatRequest = async (query, limit, token) => {
-  const response = await api.post('/api/chat', { query, limit }, {
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
-  });
-  return response.data;
+  try {
+    console.log('Request config:', { query, limit, token });
+    const response = await api.post('/api/chat', { query, limit }, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log('Full API Response:', response);
+    return response.data;
+  } catch (error) {
+    console.error('Detailed API Error:', {
+      message: error.message,
+      status: error.response?.status,
+      data: error.response?.data,
+      config: error.config,
+    });
+    throw new Error(error.response?.data?.detail || 'Network error');
+  }
 };
 
 export const citePaper = async (paper, token) => {
-  const response = await api.post('/cite', { papers: [paper] }, {
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
-  });
-  return response.data;
+  try {
+    const response = await api.post('/api/cite', { paper }, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.detail || 'Citation error');
+  }
 };
