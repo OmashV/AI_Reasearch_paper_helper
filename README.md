@@ -1,11 +1,10 @@
 # Paper Summarizer
 
-Welcome to the **Paper Summarizer** project! This application allows users to search for academic papers, view summaries, citations, and engage in conversational queries about research topics. The frontend is built with **React**, while the backend is a **FastAPI-based microservices architecture** integrating external APIs like **Cosmos RP** and **Semantic Scholar**.
-
----
+Welcome to the Paper Summarizer project! This application allows users to search for academic papers, view summaries, citations, and engage in conversational queries about research topics. The frontend is built with React, while the backend is a FastAPI-based microservices architecture integrating external APIs like Cosmos RP and Semantic Scholar.
 
 ## Table of Contents
 - [Features](#features)
+- [Contributors](#contributors)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -15,64 +14,57 @@ Welcome to the **Paper Summarizer** project! This application allows users to se
 - [Development](#development)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
-- [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
 
----
-
 ## Features
-- User authentication (login/register) with **JWT tokens**
-- Semantic search for academic papers using **Semantic Scholar API**
-- Abstractive summarization of paper abstracts using **BART**
-- Automatic **APA & BibTeX** citation generation
-- Natural, conversational responses powered by **Cosmos RP**
-- Speech-to-text input using **Web Speech API**
-- Chat history with session persistence
-- Premium upgrade modal with feature comparison
-- Responsive, modern UI with **Tailwind CSS**
+- User authentication (login/register) with JWT tokens.
+- Search for academic papers based on user queries.
+- Summarize paper abstracts using a pre-trained model (e.g., BART).
+- Generate APA and BibTeX citations for papers.
+- Conversational responses powered by Cosmos RP.
+- Responsive UI with Tailwind CSS styling.
 
----
+## Contributors
+- Viduranga MAO
+- Jayasinghe JGBM
+- Balasooriya BMMS
 
 ## Architecture
 The system is divided into two main parts:
 
 ### Frontend (`paper-summarizer-frontend`)
-- **Tech Stack**: React, React Router, Tailwind CSS, Axios
+- **Tech Stack**: React, React Router, Tailwind CSS, Axios.
 - **Structure**:
-  - `src/components/`: Reusable UI components (e.g., `Chat.js`, `PaperCard.js`, `PremiumModal.js`)
-  - `src/context/`: Global state (e.g., `AuthContext.js`)
-  - `src/services/`: API calls (`api.js`)
-- **Functionality**: Handles UI, authentication, chat flow, and speech input
+  - `src/components/`: Reusable UI components (e.g., `Login.js`, `Chat.js`, `PaperCard.js`).
+  - `src/context/`: Global state management (e.g., `AuthContext.js` for token handling).
+  - `src/services/`: API service layer (e.g., `api.js` for backend calls).
+- **Functionality**: Handles user interface, authentication, and chat interactions, sending queries to the backend.
 
 ### Backend (`paper-summarizer-backend`)
-- **Tech Stack**: FastAPI, Python, `httpx`, `asyncio`
+- **Tech Stack**: FastAPI, Python, `httpx`, `asyncio`.
 - **Microservices**:
-  - **Orchestrator (Port 8000)**: Auth + agent coordination
-  - **Search Agent (Port 8001)**: Semantic Scholar integration
-  - **Summarizer Agent (Port 8002)**: BART summarization
-  - **Citation Agent (Port 8003)**: APA/BibTeX formatting
-- **External Integration**: Cosmos RP for conversational AI
-- **Process**: Parallel agent execution → consolidated JSON response
+  - **Orchestrator (Port 8000)**: Manages authentication and coordinates agent tasks.
+  - **Search Agent (Port 8001)**: Fetches papers from Semantic Scholar.
+  - **Summarizer Agent (Port 8002)**: Generates summaries using BART.
+  - **Citation Agent (Port 8003)**: Formats citations.
+- **External Integration**: Cosmos RP for conversational responses.
+- **Process**: A user query triggers parallel agent calls, consolidates results, and returns a JSON response.
 
 ### System Architecture Diagram
 ![System Architecture](architecture.png)
 
----
-
 ## Prerequisites
-- **Node.js** (v14 or later)
-- **Python** (v3.9 or later)
-- **npm** or **yarn**
-- **pip**
-- **Git**
-- **Docker** (optional)
-
----
+- **Node.js** (v14 or later) for the frontend.
+- **Python** (v3.9 or later) for the backend.
+- **npm** or **yarn** for frontend package management.
+- **pip** for backend dependencies.
+- **Git** for version control.
+- **Docker** (optional) for containerized deployment.
 
 ## Installation
 
 ### Frontend
-```bash
-cd paper-summarizer-frontend
-npm install
+1. Navigate to the frontend directory:
+   ```bash
+   cd paper-summarizer-frontend
