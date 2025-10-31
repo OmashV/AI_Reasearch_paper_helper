@@ -62,10 +62,29 @@ The system is divided into two main parts:
 - **Git** for version control.
 - **Docker** (optional) for containerized deployment.
 
-## Installation
+## How to Run
 
-### Frontend
-1. Navigate to the frontend directory:
+
    ```bash
-   cd paper-summarizer-frontend
-   npm install
+  cd paper-summarizer-frontend
+  npm install
+  cd paper-summarizer-backend
+  python -m venv venv
+  source venv/bin/activate   # macOS / Linux
+  venv\Scripts\activate      # Windows
+  pip install -r requirements.txt
+  # Orchestrator
+  uvicorn orchestrator.main:app --reload --port 8000
+  
+  # Search Agent
+  uvicorn search_agent.main:app --reload --port 8001
+  
+  # Summarizer Agent
+  uvicorn summarizer_agent.main:app --reload --port 8002
+  
+  # Citation Agent
+  uvicorn citation_agent.main:app --reload --port 8003
+
+
+
+
