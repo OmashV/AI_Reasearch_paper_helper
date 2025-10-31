@@ -68,3 +68,4 @@ The system is divided into two main parts:
 1. Navigate to the frontend directory:
    ```bash
    cd paper-summarizer-frontend
+   npm install
